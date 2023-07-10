@@ -7,13 +7,7 @@ def subtract(num1, num2)
 end
 
 def sum(array)
-  sum = 0
-
-  array.each do |num|
-    sum += num
-  end
-
-  sum
+  array.sum
 end
 
 def multiply(num1, num2)

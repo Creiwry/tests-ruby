@@ -1,7 +1,7 @@
 def who_is_bigger(num1, num2, num3)
-  number_hash = { 'a' => num1, 'b' => num2, 'c' => num3}
+  number_hash = { 'a' => num1, 'b' => num2, 'c' => num3 }
   if number_hash.values.include?(nil)
-    "nil detected"
+    'nil detected'
   else
     sorted_hash = number_hash.sort_by(&:last).to_h
     biggest_number = sorted_hash.keys.last
@@ -12,9 +12,9 @@ end
 def reverse_upcase_noLTA(string)
   new_string = string.reverse.upcase
   result = []
-  forbidden_letters = ['L', 'T', 'A']
+  forbidden_letters = %w[L T A]
 
-  new_string.split("").each do |letter|
+  new_string.chars.each do |letter|
     result << letter unless forbidden_letters.include?(letter)
   end
 
@@ -30,9 +30,7 @@ def magic_array(array)
   final_array = []
   array.each do |number|
     number_multiple = number * 2 unless (number % 3).zero?
-    unless final_array.include?(number_multiple) || number_multiple == nil
-      final_array << number_multiple 
-    end
+    final_array << number_multiple unless final_array.include?(number_multiple) || number_multiple.nil?
   end
   final_array
 end
